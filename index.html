@@ -10,6 +10,47 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>TESTE MESMO AQUI</h1>
+    <header>
+        <img src="assets/logo.svg" alt="">
+        <a href="">
+            <img src="assets/left-arrow.png" alt="">
+            Voltar
+        </a>
+        <h1>Compras da semana</h1>
+    </header>
+
+    <form action="post">
+        <fieldset>
+            <label for="item"></label>
+            <input id="item" name="item" type="text" placeholder="Adicione um novo item">
+            <button>Adicionar item</button>
+        </fieldset>
+
+        <fieldset>
+            <div class="input-wrapper">
+                <input id="task-1" name="task-1" type="checkbox">
+                <label for="task-1">Pão de forma</label>
+                <img src="assets/trash-icon.svg" alt="">
+            </div>
+
+            <div class="input-wrapper">
+                <input id="task-2" name="task-2" type="checkbox">
+                <label for="task-2">Café preto</label>
+                <img src="assets/trash-icon.svg" alt="">
+            </div>
+
+            <div class="input-wrapper">
+                <input id="task-3" name="task-3" type="checkbox">
+                <label for="task-3">Suco de laranja</label>
+                <img src="assets/trash-icon.svg" alt="">
+            </div>
+
+            <div class="input-wrapper">
+                <input id="task-4" name="task-4" type="checkbox">
+                <label for="task-4">Bolacha</label>
+                <img src="assets/trash-icon.svg" alt="">
+            </div>
+        </fieldset>
+    </form>
 </body>
 </html>
