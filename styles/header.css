@@ -1,12 +1,15 @@
 header {
     max-width: 24.375rem;
-    margin: 2.75rem 1rem;
+    margin-block: 2.75rem;
+    margin-inline: auto;
+    padding-inline: 2rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
 
     & #logo {
         display: none;
+        width: 155px;
+        height: 40px;
     }
 
     & div {
@@ -30,6 +33,18 @@ header {
             font: var(--title);
             color: var(--content-primary);
             font-weight: bold;
+        }
+    }
+}
+
+@media (min-width: 64rem) {
+    header {
+        max-width: 43rem;
+        gap: 3.875rem;
+
+        & #logo {
+            display: flex;
+            align-self: center;
         }
     }
 }
