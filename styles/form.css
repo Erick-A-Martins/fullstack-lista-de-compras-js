@@ -17,11 +17,27 @@ form {
             border-radius: 0.75rem;
             border: 2px solid var(--border-primary);
             background-color: var(--background-secondary);
+            outline: none;
     
             &::placeholder {
                 font: var(--label);
                 color: var(--content-tertiary);
             }
+
+            &:focus {
+                border-color: var(--color-brand);
+
+                &::placeholder {
+                    color: var(--content-primary);
+                }
+            }
+            
+            &:not(:focus) {
+                &:hover {
+                    border-color: var(--border-hover);
+                }
+            }
+
         }
 
         & button {
@@ -33,9 +49,16 @@ form {
             font: var(--label);
             cursor: pointer;
             transition: background-color 300ms ease;
+            border: 2px solid var(--color-brand);
+            outline: unset;
 
             &:hover {
                 background-color: var(--color-brand-hover);
+                border-color: var(--color-brand-hover);
+            }
+
+            &:focus {
+                border-color: var(--color-brand-hover);
             }
         }
     }
@@ -61,14 +84,17 @@ form {
                 align-items: center;
                 gap: .6rem;
 
+                &:hover .checkbox-img {
+                    background-image: url(/assets/checkbox-hover.svg);     
+                }
+
                 & .checkbox-img {
                     background-image: url(/assets/checkbox-default.svg);
                     background-repeat: no-repeat;
                     width: 16.5px;
                     height: 16.5px;
 
-                    /* TROCAR DE IMAGEM QUANDO O INPUT TIVER CHECKED E QUANDO FOR HOVER*/
-
+                    transition: background-image 300ms ease;
                 }
 
                 & input {
@@ -79,10 +105,39 @@ form {
 
                     top: 0;
                     left: 0;
-                }
 
+                    &:focus {
+                        border: 2px solid var(--color-brand-hover);
+                        border-radius: .75rem;
+                    }
+
+                }
+                
+                &:has(:checked) .checkbox-img {
+                    background-image: url(/assets/checkbox-selected.svg);
+                }
             }
         }
     }
     
+}
+
+@media (min-width: 64rem) {
+    form {
+        max-width: 43rem;
+
+        & fieldset:nth-child(1) {
+            flex-direction: row;
+            gap: unset;
+
+            & #item {
+                min-width: 70%;
+                margin-right: 1rem;
+            }
+
+            & button {
+                width: 100%;
+            }
+        }
+    }
 }
