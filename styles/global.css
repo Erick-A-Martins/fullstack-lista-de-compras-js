@@ -29,6 +29,7 @@
 }
 
 body {
+    background-color: var(--background-primary);
     font: var(--paragraph);
     color: var(--content-secondary);
 }
