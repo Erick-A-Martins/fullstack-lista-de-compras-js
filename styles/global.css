@@ -27,3 +27,14 @@
     --paragraph: 1rem/1.25rem var(--ff-base);
     --link: 0.875rem/1rem var(ff-base);
 }
+
+body {
+    font: var(--paragraph);
+    color: var(--content-secondary);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    font: var(--link);
+}
