@@ -119,6 +119,24 @@ form {
             }
         }
     }
+
+    & #remove-alert {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        background-color: var(--color-danger);
+        color: var(--always-white);
+        font: var(--label);
+        font-weight: 600;
+        padding: 1rem;
+        border-radius: 0.75rem;
+        margin-top: 2.25rem;
+
+        & #delete-icon {
+            margin-left: auto;
+        }
+    }
     
 }
 
