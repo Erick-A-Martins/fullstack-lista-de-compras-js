@@ -2,6 +2,7 @@ const item = document.getElementById("item");
 const form = document.querySelector("form");
 const containerFieldset = document.getElementById("container");
 const removeAlertDiv = document.getElementById("remove-alert");
+const deleteIcon = document.getElementById("delete-icon");
 
 form.onsubmit = (event) => {
     event.preventDefault();
@@ -50,9 +51,19 @@ document.addEventListener("DOMContentLoaded", () => {
             const wrapper = event.target.closest(".input-wrapper");
             if(wrapper) {
                 wrapper.style.display = "none";
+                removeAlertDiv.style.opacity = "1";
+                
+                setTimeout(function() {
+                    removeAlertDiv.style.opacity = "0";
+                }, 2000);
+
             } else {
                 alert("Erro ao deletar item!");
             }
         }
     });
 });
+
+deleteIcon.onclick = function () {
+    removeAlertDiv.style.opacity = "0";
+};
