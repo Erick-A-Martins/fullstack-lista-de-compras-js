@@ -1,7 +1,7 @@
 const item = document.getElementById("item");
 const form = document.querySelector("form");
 const containerFieldset = document.getElementById("container");
-
+const removeAlertDiv = document.getElementById("remove-alert");
 
 form.onsubmit = (event) => {
     event.preventDefault();
@@ -20,10 +20,16 @@ form.onsubmit = (event) => {
     itemInput.type = "checkbox";
 
     const itemName = document.createElement("label");
-    itemName.textContent = item.value;
+    if(item.value == "") {
+        alert("O campo de nome precisa ser preenchido!");
+        return;
+    } else {
+        itemName.textContent = item.value;
+    }
 
     const itemTrashIcon = document.createElement("img");
     itemTrashIcon.src = "assets/trash-icon.svg";
+    itemTrashIcon.classList.add("trash-icon");
 
     newItem.append(itemInnerWrapper, itemTrashIcon);
     itemInnerWrapper.append(itemCheckboxImg, itemInput, itemName);
@@ -35,3 +41,18 @@ form.onsubmit = (event) => {
         alert("Ocorreu um erro, tente novamente!");
     }
 }
+
+
+// Remove items by click
+document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("click", (event) => {
+        if(event.target.classList.contains("trash-icon")) {
+            const wrapper = event.target.closest(".input-wrapper");
+            if(wrapper) {
+                wrapper.style.display = "none";
+            } else {
+                alert("Erro ao deletar item!");
+            }
+        }
+    });
+});

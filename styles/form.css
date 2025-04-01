@@ -117,6 +117,11 @@ form {
                     background-image: url(/assets/checkbox-selected.svg);
                 }
             }
+
+            & .trash-icon {
+                position: absolute;
+                right: 1rem;
+            }
         }
     }
 
@@ -124,6 +129,8 @@ form {
         display: flex;
         align-items: center;
         gap: 0.5rem;
+        opacity: 0;
+        transition: opacity 500ms ease;
 
         background-color: var(--color-danger);
         color: var(--always-white);
@@ -135,6 +142,7 @@ form {
 
         & #delete-icon {
             margin-left: auto;
+            cursor: pointer;
         }
     }
     
